@@ -1,10 +1,9 @@
-# Project Name
+# Guild Team AI
 
-> Brief description of the project (placeholder)
+> Hello, my name is Arthur
 
 ## 📌 Project Overview
-This project is used for **XXX** (placeholder).  
-Here is some example content that you can replace later with actual information.
+This project is used for plugin in Guild game.  
 
 ## ⚙️ Dependencies
 Make sure you have installed the following dependencies:
