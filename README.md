@@ -66,6 +66,10 @@ Once the basic system is in place, we will refine it by:
 ## 🌍 Why It Matters
 By bridging the gap between **LLMs and game development**, DeepThink aims to revolutionize how interactive content is created. Our research will **empower designers, developers, and storytellers** to bring new levels of dynamic AI-driven creativity into Unreal Engine 5. 
 
+<audio controls>
+  <source src="https://files.catbox.moe/amo4p6.mp3" type="audio/mpeg">
+</audio>
+
 🚀 *Join us as we shape the future of AI-assisted game development!* 🎮
 
 ---
