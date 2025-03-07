@@ -26,9 +26,6 @@
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)  
 
 <div align="center">
-  <img src="" width="300"/>
-</div>  
-<div align="center">
   <img src="https://memeprod.ap-south-1.linodeobjects.com/user-maker-thumbnail/75891c9e3072e050c7d2a4f16088a821.gif" width="300"/>
 </div>  
 
