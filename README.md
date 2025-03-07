@@ -38,3 +38,5 @@ By bridging the gap between **LLMs and game development**, DeepThink aims to rev
 | [Member 2] | [Role] | [Email] |
 | [Member 3] | [Role] | [Email] |
 | [Member 4] | [Role] | [Email] |
+| [Member 5] | [Role] | [Email] |
+| [Member 6] | [Role] | [Email] |
