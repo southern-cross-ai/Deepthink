@@ -27,10 +27,10 @@ Before integrating ChatGPT into Unreal, we will first create a **standalone Pyth
 Once we have a functioning API connection, the next step is embedding this capability into **Python scripts that Unreal Engine can execute**. This involves creating scripts that **retrieve context from Unreal assets**, generate AI-driven content via ChatGPT, and **seamlessly inject** the results back into Unreal’s properties. For example, we could develop a script like **"GenerateNPCDialogue.py"**, where AI-generated dialogue dynamically populates an NPC’s text field.
 
 ### ✅ Step 4: Developing an Editor Utility Widget
-To enhance usability, we aim to create a **custom Editor Utility Widget** that provides an intuitive interface for triggering AI interactions inside Unreal. This widget could include features like:
-- A **text input field** where users can specify a style or context for AI-generated content.
-- A **Generate button** that calls ChatGPT and fetches relevant data.
-- A **real-time preview window** to immediately see the AI-generated results.
+Depending on the project's progress and requirements, we may explore the development of a **custom Editor Utility Widget** to enhance usability. This widget could provide an intuitive interface for triggering AI interactions inside Unreal. However, its necessity will depend on how effectively other methods integrate ChatGPT into the workflow. Potential features of the widget might include:
+- A **text input field** for specifying styles or context for AI-generated content.
+- A **Generate button** to call ChatGPT and retrieve relevant data.
+- A **real-time preview window** to display AI-generated results immediately.
 
 ### ✅ Step 5: Expanding Capabilities & Optimizing Performance
 Once the basic system is in place, we will refine it by:
