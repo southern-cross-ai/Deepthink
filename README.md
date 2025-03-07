@@ -1,7 +1,7 @@
 # 🌟 DeepThink - Guild AI Team
 
 <div align="center">
-  <img src="https://i.imgur.com/rKwWoc5.gif" width="400"/>
+  <img src="https://i.imgur.com/GZ7rUqN.gif" width="400"/>
 </div>  
 
 ## 🎯 Our Mission
