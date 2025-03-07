@@ -6,12 +6,16 @@
 
 DeepThink is an AI-driven research team under **Guild AI**, dedicated to exploring innovative ways of integrating **Large Language Models (LLMs)** into **Unreal Engine 5**. Our primary objective is to streamline the interaction between **ChatGPT API** and **Unreal Engine**, enabling seamless AI-powered content creation.
 
+---
+
 ## 🔍 Key Objectives
 
 ### 🏗️ **Building an Unreal Plugin for LLM Integration**
 - Investigate the most effective approach to integrating **ChatGPT API calls** into Unreal as a **plugin**.
 - Leverage **existing tools and frameworks** to maximize efficiency and minimize redundant efforts.
 - Establish a **baseline** by identifying the best practices currently available.
+
+---
 
 ### 🎮 **Expanding AI-Driven Content Authoring**
 - **Placing assets dynamically**: Use LLM APIs to automatically position and configure assets in Unreal scenes.
@@ -21,7 +25,7 @@ DeepThink is an AI-driven research team under **Guild AI**, dedicated to explori
   - 🎁 New items, world objects, and interactive components.
 - **Optimizing AI-assisted workflows** for more immersive world-building inside Unreal Engine.
 
-- ---
+---
 
 ## 🏗 Implementation Plan
 
@@ -56,6 +60,8 @@ Once the basic system is in place, we will refine it by:
 By bridging the gap between **LLMs and game development**, DeepThink aims to revolutionize how interactive content is created. Our research will **empower designers, developers, and storytellers** to bring new levels of dynamic AI-driven creativity into Unreal Engine 5. 
 
 🚀 *Join us as we shape the future of AI-assisted game development!* 🎮
+
+---
 
 ## 👥 Team Members
 | Name | Role | Email |
