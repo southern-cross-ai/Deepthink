@@ -1,12 +1,17 @@
 # 🌟 DeepThink - Guild AI Team
 
-![Unreal Engine AI](https://source.unsplash.com/1600x400/?technology,ai,unreal)
+<div align="center">
+  <img src="https://i.imgur.com/rKwWoc5.gif" width="400"/>
+</div>  
 
 ## 🎯 Our Mission
 
 DeepThink is an AI-driven research team under **Guild AI**, dedicated to exploring innovative ways of integrating **Large Language Models (LLMs)** into **Unreal Engine 5**. Our primary objective is to streamline the interaction between **ChatGPT API** and **Unreal Engine**, enabling seamless AI-powered content creation.
 
-![Coding AI](https://media.giphy.com/media/QTfX9Ejfra3ZmNxh6B/giphy.gif)  
+<div align="center">
+  <img src="https://media.giphy.com/media/QTfX9Ejfra3ZmNxh6B/giphy.gif" width="400"/>
+</div>
+
 
 ---
 
