@@ -78,4 +78,4 @@ By bridging the gap between **LLMs and game development**, DeepThink aims to rev
 | Zhuiqi Lin | Team member | u7733924@anu.edu.au |
 | Boyang Zhang | Team member | u7760642@anu.edu.au |
 | Qingchuan Rui | Team member | u7776331@anu.edu.au |
-| [Member 6] | [Role] | [Email] |
+| Dongze Yu | Team member | u7775416@anu.edu.au |
