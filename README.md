@@ -73,7 +73,7 @@ By bridging the gap between **LLMs and game development**, DeepThink aims to rev
 ## 👥 Team Members
 | Name | Role | Email |
 |------|------|-------|
-| [Member 1] | [Role] | [Email] |
+| XiangyuTan | Team member | u7779491@anu.edu.au |
 | [Member 2] | [Role] | [Email] |
 | [Member 3] | [Role] | [Email] |
 | [Member 4] | [Role] | [Email] |
