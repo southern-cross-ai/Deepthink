@@ -1,4 +1,10 @@
-FROM ubuntu:22.04
+FROM nvidia/cuda:12.2.2-base-ubuntu22.04
+
+# Set environment variables
+ENV NVIDIA_VISIBLE_DEVICES=all \
+    NVIDIA_DRIVER_CAPABILITIES=compute,utility \
+    OLLAMA_MODELS=/root/.ollama
+VOLUME $OLLAMA_MODELS
 
 # Install basic dependencies
 RUN apt-get update && apt-get install -y \
@@ -7,7 +13,9 @@ RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
     git \
-    wget
+    wget \
+    supervisor \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install Ollama
 RUN curl -fsSL https://ollama.com/install.sh | sh
@@ -16,14 +24,23 @@ RUN curl -fsSL https://ollama.com/install.sh | sh
 COPY requirements.txt /app/requirements.txt
 RUN pip3 install -r /app/requirements.txt
 
-# Copy Gradio App and startup script
+# Gradio App
 WORKDIR /app
 COPY gradio_app.py /app/
-COPY start.sh /app/
+
+# Supervisor configuration
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN mkdir -p /var/log/supervisor
 
 # Expose ports
+# Gradio
 EXPOSE 7860
+# Ollama
 EXPOSE 11434
 
+# Health check for Gradio app
+HEALTHCHECK --interval=30s --timeout=5s --start-period=60s \
+    CMD curl -f http://localhost:11434/api/tags || exit 1
+
 # Entry point
-CMD ["/app/start.sh"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
