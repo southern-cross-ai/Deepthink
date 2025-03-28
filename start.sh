@@ -1,21 +1,21 @@
 #!/bin/bash
 
-# 启动 Ollama 服务
+# Start Ollama service
 ollama serve &
 
-# 等待 Ollama 的 REST API 正常
+# Wait for Ollama's REST API to be ready
 echo "Waiting for Ollama API to be ready..."
 until curl -s http://localhost:11434/api/tags > /dev/null; do
   echo "Still waiting for Ollama..."
   sleep 2
 done
 
-# 下载并加载模型
+# Download and load the model
 ollama pull llama2
 ollama run llama2 &
 
-# 再等待模型就绪（可保守 sleep 一下）
+# Wait for the model to be ready (can conservatively sleep for a bit)
 sleep 10
 
-# 启动 Gradio 前端
+# Start Gradio frontend
 python3 /app/gradio_app.py
