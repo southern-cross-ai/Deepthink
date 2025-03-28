@@ -1,28 +1,30 @@
-# Use Ubuntu 24.04 for stability
-FROM ubuntu:24.04
+FROM ubuntu:22.04
 
-# Set environment variable for non-interactive installation
-ENV DEBIAN_FRONTEND=noninteractive
-
-# Update system and install necessary packages
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    vim \
-    git \
-    wget \
+# 安装基本依赖
+RUN apt-get update && apt-get install -y \
     curl \
-    htop \
-    nvtop \
+    sudo \
     python3 \
     python3-pip \
-    python3-venv \
-    python3-dev \
-    openssh-client \
-    git-lfs \
-    && rm -rf /var/lib/apt/lists/*  
+    git \
+    wget
 
-# Ensure 'python3' is recognized as 'python'
-RUN ln -sf /usr/bin/python3 /usr/bin/python
+# 安装 Ollama
+RUN curl -fsSL https://ollama.com/install.sh | sh
 
-# Default command (for interactive HPC usage)
-CMD ["/bin/bash"]
+# 安装 Python 依赖
+COPY requirements.txt /app/requirements.txt
+RUN pip3 install -r /app/requirements.txt
+
+# 拷贝 Gradio App 和启动脚本
+WORKDIR /app
+COPY gradio_app.py /app/
+COPY start.sh /app/
+RUN chmod +x /app/start.sh
+
+# 暴露端口
+EXPOSE 7860
+EXPOSE 11434
+
+# 入口
+CMD ["/app/start.sh"]
