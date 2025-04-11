@@ -80,6 +80,7 @@ You can find our supporting files and documentation here:
 - 🧩 [Scrum log (Word)](https://docs.google.com/document/d/1mTqhx3Qx7PSceR9ZKhv2mKJX5xxrKtjKlYn27QcoV8g/edit?usp=sharing)
 - 🧩 [Risk log (Word)](https://docs.google.com/document/d/1P9ITq3K_k2EMazB4LNoyt7epT0v5S0n7MWlrb-fu4-s/edit?usp=sharing)
 - 🧩 [Issue (Github Page)](https://github.com/orgs/southern-cross-ai/projects/44/views/1)
+- 🧩 [Landing Page (Website)](https://sites.google.com/view/deepthink/home)
 
 ---
 
