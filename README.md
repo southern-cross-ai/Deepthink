@@ -1,4 +1,4 @@
-# 🌟 DeepThink - Guild AI Team
+# 🌟 DeepThink - A Aouthern Cross AI Team
 
 <div align="center">
   <img src="https://i.imgur.com/GZ7rUqN.gif" width="400"/>
