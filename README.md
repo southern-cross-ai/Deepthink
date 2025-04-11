@@ -78,10 +78,10 @@ By bridging the gap between **LLMs and game development**, DeepThink aims to rev
 
 You can find our supporting files and documentation here:
 - 🧩 [Weekly Meeting Record (Word)](https://anu365-my.sharepoint.com/:w:/g/personal/u7779491_anu_edu_au/ETsG5hYUFolOm8YgzA7JOjQBOcjZiMiZDUAs_TsFEfNG7A?e=UahHmo)
-- 🧩 [System Design Overview (PDF)](https://your-link-here.com)
-- 🧩 [System Design Overview (PDF)](https://your-link-here.com)
-- 🧩 [System Design Overview (PDF)](https://your-link-here.com)
-- 🧩 [System Design Overview (PDF)](https://your-link-here.com)
+- 🧩 [Reflection log (Word)](https://docs.google.com/document/d/1sdAgFRltdWNN607z7K-vBRSHbkXO1tB8jcmmhmoRJFk/edit?usp=sharing)
+- 🧩 [Scrum log (Word)](https://docs.google.com/document/d/1mTqhx3Qx7PSceR9ZKhv2mKJX5xxrKtjKlYn27QcoV8g/edit?usp=sharing)
+- 🧩 [Risk log (Word)](https://docs.google.com/document/d/1P9ITq3K_k2EMazB4LNoyt7epT0v5S0n7MWlrb-fu4-s/edit?usp=sharing)
+- 🧩 [Issue (Github Page)](https://github.com/orgs/southern-cross-ai/projects/44/views/1)
 
 ---
 
