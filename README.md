@@ -75,12 +75,13 @@ By combining cutting-edge open-source tools in a unified platform, DeepThink ena
 ## 📄 Additional Project Documents
 
 You can find our supporting files and documentation here:
-- 🧩 [Weekly Meeting Record (Word)](https://anu365-my.sharepoint.com/:w:/g/personal/u7779491_anu_edu_au/ETsG5hYUFolOm8YgzA7JOjQBOcjZiMiZDUAs_TsFEfNG7A?e=UahHmo)
-- 🧩 [Reflection log (Word)](https://docs.google.com/document/d/1sdAgFRltdWNN607z7K-vBRSHbkXO1tB8jcmmhmoRJFk/edit?usp=sharing)
-- 🧩 [Scrum log (Word)](https://docs.google.com/document/d/1mTqhx3Qx7PSceR9ZKhv2mKJX5xxrKtjKlYn27QcoV8g/edit?usp=sharing)
-- 🧩 [Risk log (Word)](https://docs.google.com/document/d/1P9ITq3K_k2EMazB4LNoyt7epT0v5S0n7MWlrb-fu4-s/edit?usp=sharing)
-- 🧩 [Issue (Github Page)](https://github.com/orgs/southern-cross-ai/projects/44/views/1)
+- 🧩 [Statement of Work (Docs)](https://docs.google.com/document/d/1WI57MfdQCkO5DCql64tNLIItVtlABv6D/edit?usp=sharing&ouid=111345095007819589151&rtpof=true&sd=true)
 - 🧩 [Landing Page (Website)](https://sites.google.com/view/deepthink/home)
+- 🧩 [Weekly Meeting Record (Docs)](https://anu365-my.sharepoint.com/:w:/g/personal/u7779491_anu_edu_au/ETsG5hYUFolOm8YgzA7JOjQBOcjZiMiZDUAs_TsFEfNG7A?e=UahHmo)
+- 🧩 [Reflection log (Docs)](https://docs.google.com/document/d/1sdAgFRltdWNN607z7K-vBRSHbkXO1tB8jcmmhmoRJFk/edit?usp=sharing)
+- 🧩 [Scrum log (Docs)](https://docs.google.com/document/d/1mTqhx3Qx7PSceR9ZKhv2mKJX5xxrKtjKlYn27QcoV8g/edit?usp=sharing)
+- 🧩 [Risk log (Docs)](https://docs.google.com/document/d/1P9ITq3K_k2EMazB4LNoyt7epT0v5S0n7MWlrb-fu4-s/edit?usp=sharing)
+- 🧩 [Issue (Github Page)](https://github.com/orgs/southern-cross-ai/projects/44/views/1)
 
 ---
 
