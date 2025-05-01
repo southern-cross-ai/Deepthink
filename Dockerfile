@@ -24,6 +24,7 @@ RUN pip3 install -r /app/requirements.txt
 WORKDIR /app
 COPY gradio_app.py /app/
 COPY start.sh /app/
+COPY langchain_api.py /app/
 RUN chmod +x /app/start.sh
 
 # 暴露端口
