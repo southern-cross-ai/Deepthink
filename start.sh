@@ -17,5 +17,8 @@ ollama run llama2 &
 # 再等待模型就绪（可保守 sleep 一下）
 sleep 10
 
+#Activate Langchain_Api
+python3 /app/langchain_api.py &
+
 # 启动 Gradio 前端
 python3 /app/gradio_app.py
