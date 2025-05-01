@@ -1,0 +1,20 @@
+version: '3.8'
+
+services: # Services is running containers
+  ollama-gradio-app: # service name =/ container_name
+    build: .    # dockerfile location '.'means current folder
+    container_name: deepthink-instance-2
+    ports:
+      - "7860:7860"   # Gradio UI
+      - "11434:11434" # Ollama API
+    volumes:
+      - ~/.ollama:/root/.ollama   # Mount host's model cache ~/.ollama is host location /root/.ollamais in Ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]  # Enable GPU if available
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    stdin_open: true
+    tty: true
