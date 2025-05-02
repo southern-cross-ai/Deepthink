@@ -6,8 +6,8 @@ CONTAINER_NAME="ollama-gradio-app"
 VOLUME_NAME="ollama_models"
 GRADIO_PORT=7860
 OLLAMA_PORT=11434
-USE_GPU=${USE_GPU:-1}  # 0 to disable GPU
-
+# 0 to disable GPU
+USE_GPU=${USE_GPU:-1}
 # 0. Check environment
 if ! command -v docker &> /dev/null; then
     echo "[ERROR] Docker not found in PATH. Please install Docker and add it to your PATH."
