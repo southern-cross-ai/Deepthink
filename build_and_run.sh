@@ -8,45 +8,60 @@ GRADIO_PORT=7860
 OLLAMA_PORT=11434
 USE_GPU=${USE_GPU:-1}  # Default to GPU enabled
 
-# 1. Build Docker image
-echo "[INFO] Building Docker image..."
-docker build -t $IMAGE_NAME . || {
-    echo "[ERROR] Failed to build image";
-    exit 1;
-}
+# 0. Check if container already exists, if so, start it.
+if docker ps -a --format '{{.Names}}' | grep -q "^${CONTAINER_NAME}$"; then
+    if docker ps --format '{{.Names}}' | grep -q "^${CONTAINER_NAME}$"; then
+        echo "[INFO] Container $CONTAINER_NAME is already running"
+    else
+        echo "[INFO] Starting existing container..."
+        docker start $CONTAINER_NAME || {
+            echo "[ERROR] Failed to start container"
+            exit 1
+        }
+    fi
+    
+else
+    # 1. Build Docker image
+    echo "[INFO] Building Docker image..."
+    docker build -t $IMAGE_NAME . || {
+        echo "[ERROR] Failed to build image";
+        exit 1;
+    }
 
-# 2. Check if volume exists, create if not
-if ! docker volume inspect $VOLUME_NAME &>/dev/null; then
-    echo "[INFO] Creating volume: $VOLUME_NAME"
-    docker volume create $VOLUME_NAME
-fi
+    # 2. Check if volume exists, create if not
+    if ! docker volume inspect $VOLUME_NAME &>/dev/null; then
+        echo "[INFO] Creating volume: $VOLUME_NAME"
+        docker volume create $VOLUME_NAME
+    fi
 
-# 3. Run container
-# GPU Support
-if [ "$USE_GPU" -eq 1 ]; then
-    if docker info | grep -q "Runtimes.*nvidia"; then
-        GPU_FLAG="--gpus all"
-        echo "[INFO] GPU acceleration enabled (NVIDIA detected)"
+    # 3. Run container
+    # GPU Support
+    if [ "$USE_GPU" -eq 1 ]; then
+        if docker info | grep -q "Runtimes.*nvidia"; then
+            GPU_FLAG="--gpus all"
+            echo "[INFO] GPU acceleration enabled (NVIDIA detected)"
+        else
+            GPU_FLAG=""
+            USE_GPU=0
+            echo "[WARNING] GPU requested but no NVIDIA runtime found - falling back to CPU"
+        fi
     else
         GPU_FLAG=""
-        USE_GPU=0
-        echo "[WARNING] GPU requested but no NVIDIA runtime found - falling back to CPU"
+        echo "[INFO] Running in CPU mode (by request)"
     fi
-else
-    GPU_FLAG=""
-    echo "[INFO] Running in CPU mode (by request)"
+
+    echo "[INFO] Starting container..."
+    docker run -d \
+        $GPU_FLAG \
+        -p $GRADIO_PORT:7860 \
+        -p $OLLAMA_PORT:11434 \
+        -v $VOLUME_NAME:/root/.ollama \
+        --name $CONTAINER_NAME \
+        $IMAGE_NAME || {
+        echo "[ERROR] Failed to start container";
+        exit 1;
+    }
 fi
-echo "[INFO] Starting container..."
-docker run -d \
-    --gpus=all \ 
-    -p $GRADIO_PORT:7860 \
-    -p $OLLAMA_PORT:11434 \
-    -v $VOLUME_NAME:/root/.ollama \
-    --name $CONTAINER_NAME \
-    $IMAGE_NAME || {
-    echo "[ERROR] Failed to start container";
-    exit 1;
-}
 
 # 4. Display deployment information
 echo ""
@@ -70,3 +85,5 @@ echo "Inspect volume:  docker volume inspect $VOLUME_NAME"
 # elif which open >/dev/null; then
 #     open "http://localhost:$GRADIO_PORT" >/dev/null 2>&1
 # fi
+
+exec bash
