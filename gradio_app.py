@@ -4,24 +4,23 @@ import requests
 def chat_with_ollama(prompt, history):
     if not isinstance(history, list):
         history = []
+    # messages = [] # messages is a list to store fomer messages
+    # for user_msg, bot_msg in history:
+    #     messages.append({"role": "user", "content": user_msg})
+    #     messages.append({"role": "assistant", "content": bot_msg})
+    # messages.append({"role": "user", "content": prompt})
+    try:
+        # 调用 LangChain API（封装了 prompt/llm/parser）
+        response = requests.post(
+            "http://localhost:8000/chat",
+            json={"topic": prompt}
+        )
 
-    messages = [] # messages is a list to store fomer messages
-    for user_msg, bot_msg in history:
-        messages.append({"role": "user", "content": user_msg})
-        messages.append({"role": "assistant", "content": bot_msg})
-    messages.append({"role": "user", "content": prompt})
+        reply = response.json().get("response", "[Error: no response]")
+    except Exception as e:
+        reply = f"[Error calling LangChain API: {e}]"
 
-    response = requests.post(
-        "http://localhost:11434/api/chat",
-        json={
-            "model": "llama2",
-            "messages": messages,
-            "stream": False
-        }
-    )
-
-    reply = response.json()["message"]["content"]
-    history.append((prompt, reply)) # history is a list to store the tuple of prompt of user and reply from AI.
+    history.append((prompt, reply))
     return history, history
 
 iface = gr.Interface(
