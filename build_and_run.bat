@@ -7,7 +7,8 @@ set CONTAINER_NAME=ollama-gradio-app
 set VOLUME_NAME=ollama_models
 set GRADIO_PORT=7860
 set OLLAMA_PORT=11434
-set USE_GPU=1  :: 0 to disable GPU
+:: 0 to disable GPU
+set USE_GPU=1
 
 :: 0. Check environment
 where docker >nul 2>&1 || (
