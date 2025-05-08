@@ -1,0 +1,18 @@
+services:
+  deepthink:
+    build: .
+    image: ${IMAGE_NAME}
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    ports:
+      - "${GRADIO_PORT}:7860"
+      - "${OLLAMA_PORT}:11434"
+      - "${LANGCHAIN_PORT}:8000"
+    volumes:
+      - ${VOLUME_NAME}:/root/.ollama
+    runtime: ${DOCKER_RUNTIME:-runc}
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+
+volumes:
+  deepthink-models:
