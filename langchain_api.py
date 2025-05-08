@@ -5,9 +5,10 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 import uvicorn
 import logging
+import sys
 
 # ✅ 启用日志打印
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # ✅ 初始化 FastAPI 实例
 app = FastAPI()

@@ -27,6 +27,8 @@ RUN pip3 install -r /app/requirements.txt
 # Gradio App
 WORKDIR /app
 COPY gradio_app.py /app/
+COPY langchain_api.py /app/
+COPY deepthink.sh /app/
 
 # Supervisor configuration
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
