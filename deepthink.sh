@@ -15,15 +15,19 @@ until curl -s http://localhost:11434/api/tags > /dev/null; do
 done
 echo "[INFO] Ollama API is ready."
 
-# Download and run the llama2 model
-echo "[INFO] Pulling llama2 model..."
-if ! ollama pull llama2; then
-  echo "[ERROR] Failed to pull llama2 model."
-  exit 1
-fi
+available_models=("llama3.2:3b" "mistral:7b" "gemma3:4b" "phi3:3.8b")
 
-echo "[INFO] Starting llama2 model..."
-ollama run llama2 &
+echo "[INFO] Starting to pull models: ${available_models[*]}"
+
+for model in "${available_models[@]}"; do
+  echo "[INFO] Pulling model: $model"
+  if ! ollama pull "$model"; then
+    echo "[ERROR] Failed to pull model: $model"
+    exit 1
+  fi
+done
+
+echo "[INFO] All models pulled successfully."
 
 # Optionally wait to ensure the model is fully initialized
 sleep 10
