@@ -37,6 +37,8 @@ RUN mkdir -p /var/log/supervisor
 EXPOSE 7860
 # Ollama
 EXPOSE 11434
+# Langchain
+EXPOSE 8000
 
 # Health check for Gradio app
 HEALTHCHECK --interval=30s --timeout=5s --start-period=60s \
