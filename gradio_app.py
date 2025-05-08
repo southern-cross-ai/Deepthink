@@ -10,7 +10,7 @@ def chat_with_ollama(prompt, history):
     #     messages.append({"role": "assistant", "content": bot_msg})
     # messages.append({"role": "user", "content": prompt})
     try:
-        # 调用 LangChain API（封装了 prompt/llm/parser）
+        # Call LangChain API (wraps prompt/llm/parser)
         response = requests.post(
             "http://localhost:8000/chat",
             json={"topic": prompt}
@@ -27,7 +27,7 @@ iface = gr.Interface(
     fn=chat_with_ollama,
     inputs=[gr.Textbox(label="Your message"), gr.State([])],
     outputs=[gr.Chatbot(), gr.State([])],
-    title="Ollama + Gradio in One Container"
+    title="Deepthink LLM Chatbot",
 )
 
 iface.launch(server_name="0.0.0.0", server_port=7860)
