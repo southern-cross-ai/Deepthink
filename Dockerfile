@@ -20,19 +20,20 @@ RUN apt-get update && apt-get install -y \
 # Install Ollama
 RUN curl -fsSL https://ollama.com/install.sh | sh
 
-# Install Python dependencies
-COPY requirements.txt /app/requirements.txt
-RUN pip3 install -r /app/requirements.txt
-
-# Gradio App
+# Deepthink App
 WORKDIR /app
-COPY gradio_app.py /app/
-COPY langchain_api.py /app/
-COPY deepthink.sh /app/
+COPY container/app/ /app/
+
+# Install Python dependencies
+COPY container/requirements.txt .
+RUN pip3 install -r requirements.txt && rm requirements.txt
 
 # Supervisor configuration
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-RUN mkdir -p /var/log/supervisor
+COPY container/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN mkdir -p /var/log/supervisor && \
+    mkdir -p /var/run && \
+    chmod 755 /var/log/supervisor /var/run && \
+    chown -R root:root /var/log/supervisor /var/run
 
 # Expose ports
 # Gradio
