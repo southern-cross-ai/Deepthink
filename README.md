@@ -75,6 +75,7 @@ By combining cutting-edge open-source tools in a unified platform, DeepThink ena
 ## 📄 Additional Project Documents
 
 You can find our supporting files and documentation here:
+- 🧩 [Document (Google Site)](https://sites.google.com/view/deepthink/home)
 - 🧩 [Statement of Work (Docs)](https://docs.google.com/document/d/1WI57MfdQCkO5DCql64tNLIItVtlABv6D/edit?usp=sharing&ouid=111345095007819589151&rtpof=true&sd=true)
 - 🧩 [Landing Page (Website)](https://sites.google.com/view/deepthink/home)
 - 🧩 [Weekly Meeting Record (Docs)](https://anu365-my.sharepoint.com/:w:/g/personal/u7779491_anu_edu_au/ETsG5hYUFolOm8YgzA7JOjQBOcjZiMiZDUAs_TsFEfNG7A?e=UahHmo)
