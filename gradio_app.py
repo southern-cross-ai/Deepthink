@@ -14,7 +14,7 @@ def get_available_ollama_models():
         return ["llama3.2"]  # fallback to default
 
 
-def chat_with_ollama(prompt, history, model="llama3.2"):
+def chat_with_ollama(prompt, history, model="llama3.2:3b"):
     """
     Function to handle chat with the Ollama model.
     Args:
@@ -30,34 +30,45 @@ def chat_with_ollama(prompt, history, model="llama3.2"):
         # Call LangChain API (wraps prompt/llm/parser)
         response = requests.post(
             "http://localhost:8000/chat",
-            json={"topic": prompt, 
-                  "model": model}, 
+            json={"topic": prompt,
+                  "model": model},
         )
-
+        response.raise_for_status()
         reply = response.json().get("response", "[Error: no response]")
     except Exception as e:
-        reply = f"[Error calling LangChain API: {e}]"
+        print(f"[ERROR] {reply}")
 
-    history.append((prompt, reply))
-    return history, history
+    messages = history + [
+        {"role": "user", "content": prompt},
+        {"role": "assistant", "content": reply}
+    ]
 
+    return messages, messages
+
+# UI
 available_models = get_available_ollama_models()
 
-with gr.Blocks(title="Ollama Chat (Multi-model)") as demo:
-    gr.Markdown("Deepthink LLM Chatbot")
-    
-    model_dropdown = gr.Dropdown(choices=available_models, value="llama3.2", label="Choose a model")
-    chatbot = gr.Chatbot()
+with gr.Blocks(title="🧠 Ollama Multi-Model Chat", theme="soft") as demo:
+    gr.Markdown("## 🤖 Deepthink Chatbot (Multi-Model)\nChoose a model and start chatting!")
+
+    model_dropdown = gr.Dropdown(choices=available_models, value="llama3.2:3b", label="Model")
+
+    chatbot = gr.Chatbot(type="messages")
     state = gr.State([])
 
     with gr.Row():
-        user_input = gr.Textbox(label="Your Message", placeholder="Ask me anything...")
-        send_btn = gr.Button("Send")
+        txt = gr.Textbox(
+            show_label=False,
+            placeholder="Type your message and press Enter...",
+            lines=1
+        )
 
-    send_btn.click(
-        fn=chat_with_ollama,
-        inputs=[user_input, state, model_dropdown],
-        outputs=[chatbot, state]
+    txt.submit(
+    fn=chat_with_ollama,
+    inputs=[txt, state, model_dropdown],  # ✅ pass dropdown as input
+    outputs=[chatbot, state]
+    ).then(
+        lambda: "", None, txt  # Clear textbox
     )
 
 demo.launch(server_name="0.0.0.0", server_port=7860)
