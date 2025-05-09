@@ -49,6 +49,7 @@ echo.
 echo [SUCCESS] Deployment completed
 echo ========================
 echo Deepthink Access URL:   http://localhost:%GRADIO_PORT%
+echo How to restart:         supervisorctl restart deepthink
 echo ========================
 echo Management Commands:
 echo View logs:          docker logs -f %CONTAINER_NAME%

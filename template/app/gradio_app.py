@@ -6,7 +6,7 @@ def get_available_ollama_models():
     try:
         result = subprocess.run(["ollama", "list"], capture_output=True, text=True, check=True)
         lines = result.stdout.strip().split("\n")[1:]  # Skip header
-        models = [line.split()[0] for line in lines if line.strip()]
+        models = list(set([line.split()[0].split(":")[0] for line in lines if line.strip()]))
         return models
     except Exception as e:
         print(f"[ERROR] Failed to get model list: {e}")

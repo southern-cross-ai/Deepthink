@@ -9,10 +9,12 @@ services:
       - "${OLLAMA_PORT}:11434"
       - "${LANGCHAIN_PORT}:8000"
     volumes:
-      - ${VOLUME_NAME}:/root/.ollama
+      - ${OLLAMA_VOLUME}:/root/.ollama
+      - ${PIP_CACHE_VOLUME}:/root/.cache/pip
     runtime: ${DOCKER_RUNTIME:-runc}
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
 
 volumes:
   deepthink-models:
+  pip-cache:
