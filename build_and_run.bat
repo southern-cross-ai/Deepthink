@@ -39,7 +39,10 @@ if "!DOCKER_RUNTIME!"=="nvidia" (
 )
 
 :: Docker compose
-docker-compose up -d
+docker-compose up -d || (
+    echo [ERROR] docker-compose failed.
+    exit /b 1
+)
 
 :: Display deployment information
 echo.
