@@ -33,7 +33,10 @@ else
 fi
 
 # Docker compose
-docker-compose up -d
+if ! docker-compose up -d; then
+    echo "[ERROR] docker-compose failed."
+    exit 1
+fi
 
 # Display deployment information
 cat <<EOF
