@@ -30,18 +30,16 @@ echo "[INFO] All models pulled successfully."
 
 # Check if models are available
 for model in "${available_models[@]}"; do
-  model_name=$(echo "$model" | cut -d':' -f1)
-  echo "[INFO] Starting model: $model_name"
-  
+  echo "[INFO] Starting model: $model"
   # Run the command in a subshell and send to background
   (
-    if ! ollama run "$model_name"; then
-      echo "[ERROR] Failed to start model: $model_name"
+    if ! ollama run "$model"; then
+      echo "[ERROR] Failed to start model: $model"
       exit 1
     fi
   ) &
-  
 done
+echo "[INFO] All models started successfully."
 
 # Optionally wait to ensure the model is fully initialized
 sleep 10
