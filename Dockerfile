@@ -26,7 +26,7 @@ COPY container/app/ /app/
 
 # Install Python dependencies
 COPY container/requirements.txt .
-RUN pip3 install -r requirements.txt && rm requirements.txt
+RUN pip3 install --cache-dir=/root/.cache/pip -r requirements.txt && rm requirements.txt
 
 # Supervisor configuration
 COPY container/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
