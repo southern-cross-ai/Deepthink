@@ -43,8 +43,8 @@ cat <<EOF
 
 [SUCCESS] Deployment completed
 ========================
-Gradio Access URL:   http://localhost:$GRADIO_PORT
-Ollama API URL:      http://localhost:$OLLAMA_PORT
+Deepthink Access URL:   http://localhost:%GRADIO_PORT%
+How to restart:         supervisorctl restart deepthink
 ========================
 Management Commands:
 View logs:          docker logs -f $CONTAINER_NAME
