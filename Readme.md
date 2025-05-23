@@ -89,9 +89,9 @@ You can find our supporting files and documentation here:
 ## 👥 Team Members
 | Name | Role | Email |
 |------|------|-------|
-| XiangyuTan | Team member | u7779491@anu.edu.au |
-| Diming Xu | Team member | u7705332@anu.edu.au |
-| Zhuiqi Lin | Team member | u7733924@anu.edu.au |
-| Boyang Zhang | Team member | u7760642@anu.edu.au |
-| Qingchuan Rui | Team member | u7776331@anu.edu.au |
-| Dongze Yu | Team member | u7775416@anu.edu.au |
+| XiangyuTan | System Integration and Logic Control | u7779491@anu.edu.au |
+| Diming Xu | Frontend Interaction and UI | u7705332@anu.edu.au |
+| Zhuiqi Lin | Tech Lead | u7733924@anu.edu.au |
+| Boyang Zhang | Documentation and Testing | u7760642@anu.edu.au |
+| Qingchuan Rui | Langchain Engineer | u7776331@anu.edu.au |
+| Dongze Yu |  Extension Function and Future Planning | u7775416@anu.edu.au |
