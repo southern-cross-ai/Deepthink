@@ -72,6 +72,23 @@ By combining cutting-edge open-source tools in a unified platform, DeepThink ena
 
 ---
 
+---
+
+## 🎥 Our Work
+
+<div align="center">
+  <a href="https://youtu.be/ZCEMsY0pTZk" target="_blank">
+    <img src="https://img.youtube.com/vi/ZCEMsY0pTZk/0.jpg" alt="DeepThink Project Video" width="400"/>
+  </a>
+</div>
+
+🎬 *Click the thumbnail above or [watch on YouTube](https://youtu.be/ZCEMsY0pTZk) to see our team introduce the DeepThink project, demonstrate key features, and walk through our development process.*
+
+---
+
+
+---
+
 ## 📄 Additional Project Documents
 
 You can find our supporting files and documentation here:
